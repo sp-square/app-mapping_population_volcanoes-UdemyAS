@@ -6,8 +6,10 @@ map = folium.Map(location=[33.378, -118.426],
 
 # add features to the map
 fg = folium.FeatureGroup(name='My Map')
-fg.add_child(folium.Marker(
-    location=[33.378, -118.426], popup='Catalina', icon=folium.Icon(color='green')))
+
+for coordinates in [[33.378, -118.426], [33.478, -119.426]]:
+    fg.add_child(folium.Marker(
+        location=coordinates, popup='Catalina', icon=folium.Icon(color='green')))
 
 # add feature group to the map
 map.add_child(fg)
